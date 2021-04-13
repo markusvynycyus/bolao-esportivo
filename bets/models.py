@@ -39,6 +39,10 @@ class Rodada(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('bets:jogo_list_by_rodada',
+                       args=[self.slug])
+
 class Jogo(models.Model):
     rodada = models.ForeignKey(Rodada,
                                  related_name='jogos',
@@ -68,3 +72,6 @@ class Jogo(models.Model):
         index_together = (('id', 'slug'),) # indice com dois campos juntos, futura consulta por id e slug
 
 
+    def get_absolute_url(self):
+        return reverse('bets:jogo_detail',
+                       args=[self.id, self.slug])
