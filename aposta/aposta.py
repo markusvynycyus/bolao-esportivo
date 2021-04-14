@@ -43,7 +43,7 @@ class Aposta(object):
         return sum(item['quantity'] for item in self.ch_aposta.values())
 
 
-    def add(self, jogo, palpite=1, override_quantity=False):
+    def add(self, jogo, palpite=0, override_palpite=False):
         """
         Adicione um jogo a aposta ou atualize seu palpite.
         """
@@ -51,7 +51,7 @@ class Aposta(object):
         if jogo_id not in self.ch_aposta:
             self.ch_aposta[jogo_id] = {'palpite': 0)}
 
-        if  override_quantity:
+        if  override_palpite:
             self.ch_aposta[jogo_id]['palpite'] = palpite
         self.save()
 
