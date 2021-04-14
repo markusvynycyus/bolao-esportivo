@@ -18,7 +18,7 @@ def jogo_list(request, rodada_slug=None):
 
 
 def jogo_detail(request, id, slug):
-    jogo = get_object_or_404(Product,
+    jogo = get_object_or_404(Jogo,
                              id=id,
                              slug=slug,
                              available=True)

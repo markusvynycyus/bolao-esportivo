@@ -14,7 +14,7 @@
       </li>
       {% for r in rodadas %}
         <li {% if rodada.slug == r.slug %}class="selected"{% endif %}>
-          <a href="{{ c.get_absolute_url }}">{{ r.name }}</a>
+          <a href="{{ r.get_absolute_url }}">{{ r.name }}</a>
         </li>
       {% endfor %}
     </ul>
@@ -23,6 +23,9 @@
     <h1>{% if rodada %}{{ rodada.name }}{% else %}Jogos{% endif %}</h1>
     {% for jogo in jogos %}
       <div class="item">
+         <a href="{{ jogo.get_absolute_url }}">
+       <!--<img src="{% if jogo.image %}{{ jogo.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"> -->
+        </a>
         <a href="{{ jogo.get_absolute_url }}">{{jogo.data_jogo}}</br>{{ jogo.time1 }} x {{jogo.time2}}<br></a>
         <br>
       <!-- ${{ product.price }}-->
