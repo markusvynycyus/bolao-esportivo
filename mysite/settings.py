@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #'bets',
     'bets.apps.BetsConfig',
+    'best.apps.ApostaConfig',
 
 ]
 
@@ -128,6 +129,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+APOSTA_SESSION_ID = 'ch_aposta' #chave para armazenar a aposta na sessão de usuário.
 
 
 # Configure Django App for Heroku.
