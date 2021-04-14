@@ -8,8 +8,7 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     #path('', include('bets.urls')),
-    path('', include('bets.urls', name='bets')), # retirei o namespace
-
+    path('', include('bets.urls', namespace='bets')),
 ]
 
 if settings.DEBUG:

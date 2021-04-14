@@ -7,7 +7,7 @@
 
 {% block content %}
   <div id="sidebar">
-    <h3>Rodadas</h3>
+    <h3>Salas de Apostas</h3>
     <ul>
       <li {% if not rodada %}class="selected"{% endif %}>
         <a href="{% url "bets:jogo_list" %}">All</a>
@@ -23,12 +23,9 @@
     <h1>{% if rodada %}{{ rodada.name }}{% else %}Jogos{% endif %}</h1>
     {% for jogo in jogos %}
       <div class="item">
-        <a href="{{ jogo.get_absolute_url }}">
-          <img src="{% if jogo.image %}{{ jogo.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-        </a>
-        <a href="{{ jogo.get_absolute_url }}">{{ jogo.name }}</a>
+        <a href="{{ jogo.get_absolute_url }}">{{jogo.data_jogo}}</br>{{ jogo.time1 }} x {{jogo.time2}}<br></a>
         <br>
-       # ${{ product.price }}
+      <!-- ${{ product.price }}-->
       </div>
     {% endfor %}
   </div>
