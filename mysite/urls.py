@@ -7,7 +7,11 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('', include('bets.urls')),
-    #path('', include('bets.urls', namespace='bets')), # retirei o namespace
+    #path('', include('bets.urls')),
+    path('', include('bets.urls', name='bets')), # retirei o namespace
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
